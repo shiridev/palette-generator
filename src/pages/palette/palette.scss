@@ -1,0 +1,88 @@
+.paletteMainContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .title {
+    width: 100%;
+    h1 {
+      margin-bottom: 0;
+      font-family: BalooBold;
+      background: -webkit-linear-gradient(0deg, rgba(67, 97, 238, 1) 0%, rgba(239, 35, 60, 1) 49%, rgba(255, 186, 8, 1) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation-name: rotateAnimation;
+      animation-duration: 10s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+
+      @keyframes rotateAnimation {
+        0% {
+          filter: hue-rotate(0deg);
+        }
+
+        100% {
+          filter: hue-rotate(360deg);
+        }
+      }
+    }
+
+    .actionBtn {
+      border: 1px solid #343434;
+      box-shadow: none;
+      border-radius: 12px;
+      height: 45px;
+      font-size: 1.4em;
+    }
+  }
+
+  .colorsContainer {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+
+    .colorContainer {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      cursor: pointer;
+
+      span {
+        font-size: 1.2em;
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+      }
+
+      &:hover {
+        padding-right: 50px;
+        padding-left: 50px;
+      }
+
+      .copyContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .paletteMainContainer {
+      .colorContainer:hover {
+        padding-right: 0px;
+        padding-left: 0px;
+      }
+    }
+  }
+}
